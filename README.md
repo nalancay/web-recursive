@@ -4,7 +4,7 @@
 
 ### Detalle técnicos
 
-Este proyecto se desarrollo con ✨Biblioteca React, ✨ libreria de material,✨customHooks, ✨realizar solicitudes HTTP con axios y ✨gestión de rutas con react-router-dom
+Este proyecto está diseñado para ser responsive adaptándose tanto a Desktop como Mobile. Se desarrollo con ✨Biblioteca React, ✨ libreria de material,✨customHooks, ✨realizar solicitudes HTTP con axios, ✨gestión de rutas con react-router-dom, ✨ pruebas con testing-library/react y ✨ tipado de datos entre componentes con prop-types.
 
 ### Pasos para ejecutar el proyecto localmente
 
@@ -25,3 +25,11 @@ Este proyecto se desarrollo con ✨Biblioteca React, ✨ libreria de material,�
      ```bash
      npm start
      ```
+
+### Ejecutar pruebas
+
+Para ejecutar las pruebas, use el siguiente comando:
+
+```bash
+npm test
+```

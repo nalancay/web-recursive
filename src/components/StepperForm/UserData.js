@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Box, Button, TextField, Typography, useTheme } from "@mui/material";
 
 export const UserData = ({
@@ -39,6 +40,7 @@ export const UserData = ({
           onChange={handleInputChange}
           error={!!errorMessageFields.name}
           helperText={errorMessageFields.name}
+          inputProps={{ "data-testid": "name-input" }}
         />
       </Box>
       <Box display="flex" alignItems="center">
@@ -60,6 +62,7 @@ export const UserData = ({
           onChange={handleInputChange}
           error={!!errorMessageFields.email}
           helperText={errorMessageFields.email}
+          inputProps={{ "data-testid": "email-input" }}
         />
       </Box>
       <Box
@@ -94,6 +97,7 @@ export const UserData = ({
           onChange={handleInputChange}
           error={!!errorMessageFields.dateOfBirth}
           helperText={errorMessageFields.dateOfBirth}
+          inputProps={{ "data-testid": "dateOfBirth-input" }}
         />
       </Box>
       <Box
@@ -131,4 +135,13 @@ export const UserData = ({
       </Box>
     </Box>
   );
+};
+
+UserData.propTypes = {
+  personalDetails: PropTypes.object,
+  handleInputChange: PropTypes.func,
+  handleBack: PropTypes.func,
+  handleApply: PropTypes.func,
+  validateFields: PropTypes.func,
+  errorMessageFields: PropTypes.object,
 };

@@ -1,10 +1,11 @@
+import PropTypes from "prop-types";
 import { Button, Typography, Box, CircularProgress } from "@mui/material";
 import WarningIcon from "@mui/icons-material/Warning";
 
 import { calculateDaysUntilBirthday } from "../../utils/date";
 
 export const Horoscope = ({
-  dataZodiacSign,
+  dataHoroscope,
   isLoadingZodiacSign,
   iconZodiacSign,
   personalDetails,
@@ -98,7 +99,7 @@ export const Horoscope = ({
                 }!`}
               </Typography>
               <Typography variant="body1" align="center" marginBottom="30px">
-                Tu horóscopo para hoy dice: {dataZodiacSign.horoscope}
+                Tu horóscopo para hoy dice: {dataHoroscope}
               </Typography>
               <Typography variant="body1" align="center">
                 {`Faltan  ${calculateDaysUntilBirthday(
@@ -125,4 +126,13 @@ export const Horoscope = ({
       )}
     </>
   );
+};
+
+Horoscope.propTypes = {
+  dataHoroscope: PropTypes.string,
+  isLoadingZodiacSign: PropTypes.bool,
+  iconZodiacSign: PropTypes.string,
+  personalDetails: PropTypes.object,
+  goToInicio: PropTypes.func,
+  errorMessage: PropTypes.object,
 };

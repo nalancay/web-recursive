@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import {
   ToggleButton,
   ToggleButtonGroup,
@@ -27,7 +28,7 @@ const StyledToggleButton = styled(ToggleButton)`
   }
 `;
 
-function GenderSelection({ personalDetails, handleInputChange, handleNext }) {
+function GenderSelection({ gender, handleInputChange, handleNext }) {
   const [imgLoaded, setImgLoaded] = useState({
     male: false,
     other: false,
@@ -43,7 +44,7 @@ function GenderSelection({ personalDetails, handleInputChange, handleNext }) {
   };
 
   const handleNextClick = () => {
-    if (personalDetails.gender === "") {
+    if (gender === "") {
       setShowMessage(true);
     } else {
       handleNext();
@@ -78,7 +79,7 @@ function GenderSelection({ personalDetails, handleInputChange, handleNext }) {
       }}
     >
       <ToggleButtonGroup
-        value={personalDetails.gender}
+        value={gender}
         exclusive
         onChange={handleGenderChange}
         aria-label="gender selection"
@@ -141,5 +142,11 @@ function GenderSelection({ personalDetails, handleInputChange, handleNext }) {
     </Box>
   );
 }
+
+GenderSelection.propTypes = {
+  gender: PropTypes.string,
+  handleInputChange: PropTypes.func,
+  handleNext: PropTypes.func,
+};
 
 export default GenderSelection;

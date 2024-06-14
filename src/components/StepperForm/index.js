@@ -113,7 +113,7 @@ export const StepperForm = () => {
           <Box sx={{ mt: 2 }}>
             {activeStep === 2 ? (
               <Horoscope
-                dataZodiacSign={dataZodiacSign}
+                dataHoroscope={dataZodiacSign?.horoscope}
                 isLoadingZodiacSign={isLoadingZodiacSign}
                 iconZodiacSign={iconZodiacSign}
                 personalDetails={personalDetails}
@@ -124,7 +124,7 @@ export const StepperForm = () => {
               <Box>
                 {activeStep === 0 && (
                   <GenderSelection
-                    personalDetails={personalDetails}
+                    gender={personalDetails.gender}
                     handleInputChange={handleInputChange}
                     handleNext={handleNext}
                   />
