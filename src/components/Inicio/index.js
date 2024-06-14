@@ -1,5 +1,6 @@
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, Button } from "@mui/material";
+import { Container, Button, Skeleton } from "@mui/material";
 import styled from "@emotion/styled";
 
 const StyledContainer = styled(Container)`
@@ -18,14 +19,25 @@ const StyledContainer = styled(Container)`
 `;
 
 export const Inicio = () => {
+  const [imgLoaded, setImgLoaded] = useState(false);
   const navigate = useNavigate();
   const goToHoroscopeForm = () => {
     navigate("/horoscope/form");
   };
 
+  useEffect(() => {
+    const img = new Image();
+    img.src = "/assets/dama.png";
+    img.onload = () => setImgLoaded(true);
+  }, []);
+
   return (
     <StyledContainer>
-      <img src="/assets/dama.png" alt="Dama" />
+      {imgLoaded ? (
+        <img src="/assets/dama.png" alt="Dama" />
+      ) : (
+        <Skeleton variant="rectangular" width="100%" height={300} />
+      )}
       <Button
         variant="contained"
         color="warning"
