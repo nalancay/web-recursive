@@ -49,6 +49,7 @@ export const StepperForm = () => {
     dataZodiacSign,
     isLoadingZodiacSign,
     iconZodiacSign,
+    errorMessage,
   } = useStepperForm();
 
   return (
@@ -117,6 +118,7 @@ export const StepperForm = () => {
                 iconZodiacSign={iconZodiacSign}
                 personalDetails={personalDetails}
                 goToInicio={goToInicio}
+                errorMessage={errorMessage}
               />
             ) : (
               <Box>

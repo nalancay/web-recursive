@@ -27,6 +27,7 @@ export const useStepperForm = () => {
     isLoading: isLoadingZodiacSign,
     makeRequest,
     setData: setDataZodiacSign,
+    errorMessage,
   } = useFetch(ENDPOINT, fetchOption);
 
   useEffect(() => {
@@ -136,5 +137,6 @@ export const useStepperForm = () => {
     dataZodiacSign,
     isLoadingZodiacSign,
     iconZodiacSign,
+    errorMessage,
   };
 };
