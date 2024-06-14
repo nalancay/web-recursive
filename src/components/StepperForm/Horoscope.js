@@ -40,6 +40,20 @@ export const Horoscope = ({
           <Typography variant="body1" align="center" sx={{ color: "#721c24" }}>
             Inténtalo más tarde.
           </Typography>
+          <Button
+            variant="contained"
+            color="warning"
+            onClick={goToInicio}
+            sx={{
+              borderRadius: "14px",
+              paddingLeft: "100px",
+              paddingRight: "100px",
+              marginTop: "30px",
+            }}
+            size="medium"
+          >
+            Aceptar
+          </Button>
         </Box>
       )}
       {isLoadingZodiacSign ? (
