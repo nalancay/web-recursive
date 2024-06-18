@@ -1,11 +1,15 @@
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 
-export const useFetch = (url, options = {}) => {
+export const useFetch = (endpoint, options = {}) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState();
   const [statusCode, setStatusCode] = useState(null);
+  const baseURL =
+    process.env.NODE_ENV === "production" ? "https://newastro.vercel.app" : "";
+
+  let url = `${baseURL}${endpoint}`;
 
   options = {
     ...options,
