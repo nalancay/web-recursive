@@ -1,12 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 
-export const useFetch = (endpoint, options = {}) => {
+export const useFetch = (url, options = {}) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState();
   const [statusCode, setStatusCode] = useState(null);
-  let url = `${process.env.REACT_APP_API_URL}${endpoint}`;
 
   options = {
     ...options,
